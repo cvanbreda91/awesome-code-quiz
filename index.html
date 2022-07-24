@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Code Quiz</title>
+</head>
+<body>
+<header class="header">
+    <h1>Code Quiz</h1>
+    <div>
+        <p>So you think you have what it takes to be a fullstack web developer?</p>
+        <p>Put your skill to the test by taking this timed quiz!</p>
+        <p>Each question will be timed and get harder as the game progresses.</p>
+        <p>At the end your score will be recorded so you can see how you compare to your friends!</p> 
+        <p>#braggingrights</p>
+    </div>
+    <h2>Are You Ready?</h2>
+    <button class="btn" id="ready" type="submit">Yes!</button>
+</header>
+<main class="hide">
+    <!--Quiz Box-->
+    <div class="quiz-box">
+        <!--Heading Box-->
+        <div class="heading-box">
+            <div class="title-box">
+                <h3>Code Quiz</h3>
+            </div>
+            <!--Timer Box-->
+            <div class="timer-box">
+                <div class="timer-text">Time Remaining</div>
+                <div class="timer-count" id="timer-count">30</div>
+            </div>
+        </div>
+        <!-- Question Box-->
+            <div class="question-box"> Question
+            <!--Questions populate from javascript-->
+            </div>
+        <!--Answer Box-->
+        <div class="option-box">
+            <ul>
+                <li>
+                    option 1
+                </li>
+                <li>
+                    option 2
+                </li>
+                <li>
+                    option 3
+                </li>
+                <li>
+                    option 4
+                </li>
+            </ul>
+            <!--Answers populate from javacript-->
+        </div>
+        <!--Submit Box-->
+        <button class="btn" id="confirm" type="submit">Submit!</button>
+    </div>
+</main>
+<footer>
+
+</footer>
+<script src="./assets/js/script.js"></script>
+</body>
+</html>
