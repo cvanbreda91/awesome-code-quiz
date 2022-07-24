@@ -56,19 +56,27 @@ let questions = [
     ]
   },]
 
-  var timeLeft = 30;
-  var elem = document.getElementById('timer-count');
+// Timer that counts down from 5
+var timerEl = document.getElementById('timer-count');
+
+function countdown() {
+    var timerCount = 30;
   
-  var timerId = setInterval(countdown, 1000);
-  
-  function countdown(event) {
-    if (timeLeft == -1) {
-      clearTimeout(timerId);
-//add timeout noise, move on to next Q
-    } else {
-      elem.innerHTML = timeLeft;
-      timeLeft--;
-    }
-  }
+    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+    var timeInterval = setInterval(function () {
+      // As long as the `timeLeft` is greater than 1
+      if (timerCount > 1) {
+        // Set the `textContent` of `timerEl` to show the remaining seconds
+        timerEl.textContent = timerCount;
+        // Decrement `timeLeft` by 1
+        timerCount--;
+      } else {
+        // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+        timerEl.textContent = '';
+        // Use `clearInterval()` to stop the timer
+        clearInterval(timeInterval);
+
+      }
+    }, 1000);}
 
 document.querySelector("#ready").addEventListener("click", countdown);
