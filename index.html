@@ -25,39 +25,48 @@
     <div class="quiz-box">
         <!--Heading Box-->
         <div class="heading-box">
-            <div class="title-box">
-                <h3>Code Quiz</h3>
+            <div class="title">
+                Code Quiz
             </div>
             <!--Timer Box-->
-            <div class="timer-box">
-                <div class="timer-text">Time Remaining</div>
+            <div class="time-remaining">
+                Time Remaining:
+            </div>
+            <div>
                 <div class="timer-count" id="timer-count">30</div>
             </div>
         </div>
         <!-- Question Box-->
-            <div class="question-box"> Question
-            <!--Questions populate from javascript-->
-            </div>
+        <div class="question-box"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <!--Questions populate from javascript-->
+        </div>
         <!--Answer Box-->
         <div class="option-box">
             <ul>
                 <li>
-                    option 1
+                    <button class="btn" id="option-1" type="submit">Option 1</button>
                 </li>
                 <li>
-                    option 2
+                    <button class="btn" id="option-2" type="submit">Option 2</button>
                 </li>
                 <li>
-                    option 3
+                    <button class="btn" id="option-3" type="submit">Option 3</button>
                 </li>
                 <li>
-                    option 4
+                    <button class="btn" id="option-4" type="submit">Option 4</button>
                 </li>
             </ul>
             <!--Answers populate from javacript-->
         </div>
         <!--Submit Box-->
-        <button class="btn" id="confirm" type="submit">Submit!</button>
+        <div class="skip-submit">
+            <button class= "btn" id="confirm" type="submit">Confirm!</button>
+            <button class="btn" id="skip" type="submit">Skip...</button>
+        </div>
+    </div>
+    <div class="exit-restart">
+        <button class="btn" id="exit" type="submit">Exit</button>
+        <button class="btn" id="restart" type="submit">Restart</button>
     </div>
 </main>
 <footer>

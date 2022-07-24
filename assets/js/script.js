@@ -70,9 +70,10 @@ function countdown() {
         timerEl.textContent = timerCount;
         // Decrement `timeLeft` by 1
         timerCount--;
-      } else {
+      }
+      else {
         // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-        timerEl.textContent = '';
+        timerEl.textContent = 'Time is Up!';
         // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);
 
