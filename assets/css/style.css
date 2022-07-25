@@ -7,8 +7,6 @@
     --secondary: #FFFFFF;
     --tertiary: #01B0D3;
     --hover: #01b0d394;
-    --right: rgb(17, 243, 17);
-    --wrong: red;
     font-size: 80%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
   }
@@ -38,7 +36,7 @@ header h1 {
 }
 
 
-.btn {
+.btn, .btn #A, .btn #B, .btn #C, .btn #D {
     outline: none;
     border: none;
     padding: 10px 15px;
@@ -56,9 +54,11 @@ header h1 {
     top: -2px;
     cursor: pointer;
   }
-  .btn:active {
+  .btn:focus {
     box-shadow: 0 0px;
     top: 0;
+    background-color:#01b0d37c;
+    color: var(--secondary);
   }
 
   main {

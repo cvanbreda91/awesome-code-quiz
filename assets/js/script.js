@@ -5,21 +5,32 @@ var A = document.getElementById('A');
 var B = document.getElementById('B');
 var C = document.getElementById('C');
 var D = document.getElementById('D');
-
-
-
 var questionNumber = 0;
+var playerScore = 0;
 
-console.log(document.getElementById('confirm'))
 
 document.getElementById('confirm').addEventListener("click", function clickCounter (){
         questionNumber = questionNumber+1;
-        console.log (questionNumber)
     
     }
-);document.getElementById('confirm').addEventListener("click", buildQuiz)
+);
+document.getElementById('confirm').addEventListener("click", buildQuiz)
 
-
+function showResults(){
+    var seeMain = document.getElementById('main')
+    if(seeMain.style.visibility === "visible")
+    {
+    seeMain.style.visibility = "hidden";
+    }
+    else
+    {
+    seeMain.style.visibility = "visible";
+    }
+    window.alert ("You've completed the game you've scored " + playerScore + " points! - click 'OK' to see leaderboard");
+   };
+function keepingScore () {
+    playerScore=playerScore+1;
+};
 
 function buildQuiz (){
     if (questionNumber===0) {
@@ -28,6 +39,10 @@ function buildQuiz (){
         B.textContent = "B";
         C.textContent = "C";
         D.textContent = "D";
+        var rightAnswer = D;
+        if (rightAnswer.addEventListener("click", keepingScore)){}
+
+
     }
     else if (questionNumber===1) {
         question.textContent = "How are you today?";
@@ -48,9 +63,6 @@ function buildQuiz (){
     }
 }
 
-function showResults(){
-
-}
 
 function countdown() {
     var timerCount = 30;
