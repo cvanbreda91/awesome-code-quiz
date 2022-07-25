@@ -1,63 +1,57 @@
-// creating an array and passing the number, questions, options, and answers
-let questions = [
-    {
-    numb: 1,
-    question: "What does HTML stand for?",
-    answer: "Hyper Text Markup Language",
-    options: [
-      "Hyper Text Preprocessor",
-      "Hyper Text Markup Language",
-      "Hyper Text Multiple Language",
-      "Hyper Tool Multi Language"
-    ]
-  },
-    {
-    numb: 2,
-    question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
-    options: [
-      "Common Style Sheet",
-      "Colorful Style Sheet",
-      "Computer Style Sheet",
-      "Cascading Style Sheet"
-    ]
-  },
-    {
-    numb: 3,
-    question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
-    options: [
-      "Hypertext Preprocessor",
-      "Hypertext Programming",
-      "Hypertext Preprogramming",
-      "Hometext Preprocessor"
-    ]
-  },
-    {
-    numb: 4,
-    question: "What does SQL stand for?",
-    answer: "Structured Query Language",
-    options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language"
-    ]
-  },
-    {
-    numb: 5,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
-    options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
-    ]
-  },]
-
-// Timer that counts down from 5
 var timerEl = document.getElementById('timer-count');
+var seeMain = document.getElementsByClassName('hide')
+// document.getElementById('question').innerHTML;
+// document.getElementById('A').innerHTML;
+// document.getElementById('B').innerHTML;
+// document.getElementById('C').innerHTML;
+// document.getElementById('D').innerHTML;
+var questionNumber = 0;
+
+function questionCount (){
+questionNumber++;
+console.log(questionNumber);
+}
+
+
+
+function buildQuiz (){
+
+if (questionNumber === 0) {
+    document.getElementById('question').innerHTML= "question";
+    document.getElementById('A').innerHTML = "a";
+    document.getElementById('B').innerHTML = "b";
+    document.getElementById('C').innerHTML = "c";
+    document.getElementById('D').innerHTML = "d";}
+else if (questionNumber === 1) {
+    document.getElementById('question').innerHTML= "butt";
+    document.getElementById('A').innerHTML = "butt";
+    document.getElementById('B').innerHTML = "butt";
+    document.getElementById('C').innerHTML = "butt";
+    document.getElementById('D').innerHTML = "butt";
+    }
+else if (questionNumber === 2) {
+    document.getElementById('question').innerHTML= "buns";
+    document.getElementById('A').innerHTML = "buns";
+    document.getElementById('B').innerHTML = "buns";
+    document.getElementById('C').innerHTML = "buns";
+    document.getElementById('D').innerHTML = "buns";
+    }
+
+else {
+    document.getElementById('question').innerHTML= "bum";
+    document.getElementById('A').innerHTML = "bum";
+    document.getElementById('B').innerHTML = "bum";
+    document.getElementById('C').innerHTML = "bum";
+    document.getElementById('D').innerHTML = "bum";
+
+};
+}
+
+
+
+function showResults(){
+
+}
 
 function countdown() {
     var timerCount = 30;
@@ -66,13 +60,12 @@ function countdown() {
     var timeInterval = setInterval(function () {
       // As long as the `timeLeft` is greater than 1
       if (timerCount > 1) {
-        // Set the `textContent` of `timerEl` to show the remaining seconds
         timerEl.textContent = timerCount;
-        // Decrement `timeLeft` by 1
+        // Decrement `timeCount` by 1
         timerCount--;
       }
       else {
-        // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+        // Once `timeCount` gets to 0
         timerEl.textContent = 'Time is Up!';
         // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);
@@ -80,4 +73,35 @@ function countdown() {
       }
     }, 1000);}
 
+    function unhideMain(){
+       var seeMain = document.getElementById('main')
+       if(seeMain.style.visibility === "hidden")
+       {
+       seeMain.style.visibility = "visible";
+       }
+       else
+       {
+       seeMain.style.visibility = "hidden";
+       }
+      };
+
+    function hideHeader(){
+        var hideTheHeader = document.getElementById('header')
+        if(hideTheHeader.style.visibility === "visible")
+        {
+            hideTheHeader.style.visibility = "hidden";
+        }
+        else
+        {
+            hideTheHeader.style.visibility = "visible";
+        }
+       };
+ 
+
+document.querySelector("#ready").addEventListener("click", unhideMain);
+document.querySelector("#ready").addEventListener("click", hideHeader);
 document.querySelector("#ready").addEventListener("click", countdown);
+document.querySelector("#ready").addEventListener("click", buildQuiz);
+document.querySelector("#confirm").addEventListener("click",questionCount);
+
+

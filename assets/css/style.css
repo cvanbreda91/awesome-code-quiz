@@ -15,17 +15,28 @@
 body {
     background-color: var(--primary);
 }
-.header{
+header{
     flex-wrap: wrap;
     color: var(--secondary);
     text-align: center;
-
+    visibility: visible;
+    position: absolute;
+    align-items: center;
+    float: top;
+    z-index: 1;
+    zoom: 200%;
   }
 
-.header h1 {
+header h1 {
     border-style: double;
     border-color: var(--tertiary);
 }
+
+.container-header {
+  position:fixed;
+  left: 15%;
+}
+
 
 .btn {
     outline: none;
@@ -50,15 +61,25 @@ body {
     top: 0;
   }
 
-  .quiz-box {
+  main {
+    visibility: hidden;
+    position: absolute;
+    float: top;
     z-index: 1000;
+    zoom: 75%
+    
+  }
+
+  .quiz-box {
     background-color: var(--secondary);
     padding: 20px;
-    margin:100px;
+    margin:50px;
     border-radius: 15px;
     border-color: var(--tertiary);
     border-style:ridge;
     border-width: 30px;
+    max-width:max-content;
+    max-height: max-content;
     }
 .heading-box {
     display: flex;
