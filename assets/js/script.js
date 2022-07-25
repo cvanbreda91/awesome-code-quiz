@@ -1,53 +1,52 @@
 var timerEl = document.getElementById('timer-count');
-var seeMain = document.getElementsByClassName('hide')
-// document.getElementById('question').innerHTML;
-// document.getElementById('A').innerHTML;
-// document.getElementById('B').innerHTML;
-// document.getElementById('C').innerHTML;
-// document.getElementById('D').innerHTML;
+var seeMain = document.getElementsByClassName('hide');
+var question = document.getElementById('question');
+var A = document.getElementById('A');
+var B = document.getElementById('B');
+var C = document.getElementById('C');
+var D = document.getElementById('D');
+
+
+
 var questionNumber = 0;
 
-function questionCount (){
-questionNumber++;
-console.log(questionNumber);
-}
+console.log(document.getElementById('confirm'))
+
+document.getElementById('confirm').addEventListener("click", function clickCounter (){
+        questionNumber = questionNumber+1;
+        console.log (questionNumber)
+    
+    }
+);document.getElementById('confirm').addEventListener("click", buildQuiz)
 
 
 
 function buildQuiz (){
-
-if (questionNumber === 0) {
-    document.getElementById('question').innerHTML= "question";
-    document.getElementById('A').innerHTML = "a";
-    document.getElementById('B').innerHTML = "b";
-    document.getElementById('C').innerHTML = "c";
-    document.getElementById('D').innerHTML = "d";}
-else if (questionNumber === 1) {
-    document.getElementById('question').innerHTML= "butt";
-    document.getElementById('A').innerHTML = "butt";
-    document.getElementById('B').innerHTML = "butt";
-    document.getElementById('C').innerHTML = "butt";
-    document.getElementById('D').innerHTML = "butt";
+    if (questionNumber===0) {
+        question.textContent = "question";
+        A.textContent = "A";
+        B.textContent = "B";
+        C.textContent = "C";
+        D.textContent = "D";
     }
-else if (questionNumber === 2) {
-    document.getElementById('question').innerHTML= "buns";
-    document.getElementById('A').innerHTML = "buns";
-    document.getElementById('B').innerHTML = "buns";
-    document.getElementById('C').innerHTML = "buns";
-    document.getElementById('D').innerHTML = "buns";
+    else if (questionNumber===1) {
+        question.textContent = "How are you today?";
+        A.textContent = "meh";
+        B.textContent = "good";
+        C.textContent = "great";
+        D.textContent = "groovy";
     }
-
-else {
-    document.getElementById('question').innerHTML= "bum";
-    document.getElementById('A').innerHTML = "bum";
-    document.getElementById('B').innerHTML = "bum";
-    document.getElementById('C').innerHTML = "bum";
-    document.getElementById('D').innerHTML = "bum";
-
-};
+    else if (questionNumber === 2){
+        question.textContent = "Are you doing ok";
+        A.textContent = "yes";
+        B.textContent = "YES";
+        C.textContent = "Yes";
+        D.textContent = "mhmm";
+    }
+    else {
+        showResults()
+    }
 }
-
-
 
 function showResults(){
 
@@ -102,6 +101,6 @@ document.querySelector("#ready").addEventListener("click", unhideMain);
 document.querySelector("#ready").addEventListener("click", hideHeader);
 document.querySelector("#ready").addEventListener("click", countdown);
 document.querySelector("#ready").addEventListener("click", buildQuiz);
-document.querySelector("#confirm").addEventListener("click",questionCount);
+
 
 
