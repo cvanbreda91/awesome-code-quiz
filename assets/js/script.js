@@ -32,35 +32,44 @@ var questionArray =[{
     "B": "IS THIS",
     "C": "ACTUALLY",
     "D": "WORKING?",
-    "rightAnswer": "C"},
+    rightAnswer: C},
     {
         "question": "holy cow",
         "A": "I think",
         "B": "this is",
         "C": "really",
         "D": "working!",
-        "rightAnswer": "D"},
+        rightAnswer: D},
 
     {"question": "test",
     "A": "test",
     "B": "test",
     "C": "test",
     "D": "wtes!",
-    "rightAnswer": "A"}
+    rightAnswer: A}
 
     ]
+function keepingScore (){
+    playerScore = playerScore+1
 
+}
 
     function buildQuiz() {
 
         countQuestion();
+        console.log(playerScore)
         if (questionNumber <3) {
         question.textContent = questionArray[questionNumber]["question"], 
         A.textContent = questionArray[questionNumber]["A"],
         B.textContent = questionArray[questionNumber]["B"], 
         C.textContent = questionArray[questionNumber]["C"], 
         D.textContent = questionArray[questionNumber]["D"],
-        rightAnswer = questionArray[questionNumber]["rightAnswer"]}
+        rightAnswer = questionArray[questionNumber]["rightAnswer"]
+            if (
+                rightAnswer.addEventListener("click",keepingScore) ){
+                    playerScore=playerScore+1;
+                }}
+            
         else{
         showResults();
 
