@@ -151,3 +151,16 @@ header h1 {
     margin:30px;
     min-width: 170px;
 }
+
+section {
+  visibility: hidden;
+  background-color: var(--secondary);
+  padding: 20px;
+  margin:50px;
+  border-radius: 15px;
+  border-color: var(--tertiary);
+  border-style:ridge;
+  border-width: 30px;
+  width:700px;
+  height: 700px;
+}

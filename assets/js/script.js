@@ -1,26 +1,26 @@
 var timerEl = document.getElementById('timer-count');
-var seeMain = document.getElementsByClassName('hide');
+var seeScore = document.getElementById('score');
 var playerScore = 0;
 var timerCount = 30;
 var questionNumber =-1;
-var seeMain = document.getElementById('main')
+var seeMain = document.getElementById('main');
 var rightAnswer ="";
+var playerName="";
+var items ="";
+var numberOne = document.getElementById('numberOne');
 
 function countdown() {
     timerCount = 30;
-  
-    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function () {
-      // As long as the `timeLeft` is greater than 1
       if (timerCount > 0) {
         timerEl.textContent = timerCount;
-        // Decrement `timeCount` by 1
         timerCount--;
+      } else if (questionNumber === 3) {
+         clearInterval(timeInterval)
       }
       else {
-       showResults();
         clearInterval(timeInterval);
-
+        showResults();
       }
     }, 1000);}
 
@@ -33,19 +33,26 @@ var questionArray =[{
     "C": "ACTUALLY",
     "D": "WORKING?",
     rightAnswer: C},
-    {
-        "question": "holy cow",
-        "A": "I think",
-        "B": "this is",
-        "C": "really",
-        "D": "working!",
-        rightAnswer: D},
+    
+    {"question": "holy cow",
+     "A": "I think",
+    "B": "this is",
+    "C": "really",
+    "D": "working!",
+    rightAnswer: D},
 
     {"question": "test",
     "A": "test",
     "B": "test",
     "C": "test",
     "D": "wtes!",
+    rightAnswer: A},
+
+    {"question": "test1",
+    "A": "test1",
+    "B": "test1",
+    "C": "test1",
+    "D": "wtes11!",
     rightAnswer: A}
 
     ]
@@ -53,53 +60,61 @@ function keepingScore (){
     playerScore = playerScore+1
 
 }
-
-    function buildQuiz() {
-
-        countQuestion();
-        console.log(playerScore)
-        if (questionNumber <3) {
-        question.textContent = questionArray[questionNumber]["question"], 
-        A.textContent = questionArray[questionNumber]["A"],
-        B.textContent = questionArray[questionNumber]["B"], 
-        C.textContent = questionArray[questionNumber]["C"], 
-        D.textContent = questionArray[questionNumber]["D"],
-        rightAnswer = questionArray[questionNumber]["rightAnswer"]
-            if (
-                rightAnswer.addEventListener("click",keepingScore) ){
-                    playerScore=playerScore+1;
-                }}
+function buildQuiz() {
+    if (questionNumber <3) {
+    countQuestion();
+    question.textContent = questionArray[questionNumber]["question"], 
+    A.textContent = questionArray[questionNumber]["A"],
+    B.textContent = questionArray[questionNumber]["B"], 
+    C.textContent = questionArray[questionNumber]["C"], 
+    D.textContent = questionArray[questionNumber]["D"],
+    rightAnswer = questionArray[questionNumber]["rightAnswer"]
+        if (rightAnswer.addEventListener("click",keepingScore) ){
+            playerScore=playerScore+1;
+            }}
             
-        else{
-        showResults();
-
-         }}
+    else{
+    showResults();
+    }};
     
-        function countQuestion(){
-            questionNumber = questionNumber+1;
-        }
+function countQuestion(){
+    questionNumber = questionNumber+1;
+    };
     
-
-// function buildQuiz (){
-    // rightAnswer = questionArray[i]["rightAnswer"];}}
-
-//if (rightAnswer){rightAnswer.addEventListener("click", keepingScore)}
-
- 
-
 function unhideMain(){
     seeMain.style.visibility = "visible"
     };
 
+function addToStorage() {
+    let itemsArray = [playerScore,playerName]
+    localStorage.setItem('items', JSON.stringify(itemsArray));};
+
+function setHighScore (){
+    seeScore.style.visibility = "visible";
+    items= JSON.parse(localStorage.getItem('items'));
+    numberOne.textContent = items[1]+" - "+items[0];
+    };
+
+
 function showResults(){
-    window.alert("game has ended");
+    window.alert("The game has ended! You have scored "+playerScore+" points!");
     seeMain.style.visibility = "hidden";
-    header.style.visibility = "hidden"
-}
+    header.style.visibility = "hidden";
+    playerName = window.prompt("initials");
+    addToStorage();
+    setHighScore ();
+    };
+
+function exitQuiz() {
+    location.reload()
+};
+
 buildQuiz();
 document.querySelector("#ready").addEventListener("click", ()=> {unhideMain();countdown()});
 document.querySelector("#confirm").addEventListener("click",buildQuiz);
-document.querySelector("#skip").addEventListener("click",buildQuiz)
+document.querySelector("#skip").addEventListener("click",buildQuiz);
+document.getElementById('exit').addEventListener("click",exitQuiz);
+
 
 
 
