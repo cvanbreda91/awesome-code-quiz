@@ -8,7 +8,26 @@ var rightAnswer ="";
 var playerName="";
 var items ="";
 var numberOne = document.getElementById('numberOne');
+var items=[];
+var itemCounter = 0;
 
+var countItems = function () {
+    itemCounter=localStorage.length +1;
+    console.log(itemCounter);
+    };
+
+var addToStorage = function() {
+    countItems ();
+    playerName = window.prompt("initials");
+    items=[playerScore, playerName];
+    localStorage.setItem('items'+itemCounter, JSON.stringify(items));};
+    
+var setHighScore = function(){
+    seeScore.style.visibility = "visible";
+   var getData = localStorage.getItem('items');
+   getData = JSON.parse(getData);
+    numberOne.textContent = items[1] + " - " +items[0]}
+      
 function countdown() {
     timerCount = 30;
     var timeInterval = setInterval(function () {
@@ -83,29 +102,17 @@ function unhideMain(){
     seeMain.style.visibility = "visible"
     };
 
-function addToStorage() {
-    let itemsArray = [playerScore,playerName]
-    localStorage.setItem('items', JSON.stringify(itemsArray));};
-
-function setHighScore (){
-    seeScore.style.visibility = "visible";
-    items= JSON.parse(localStorage.getItem('items'));
-    numberOne.textContent = items[1]+" - "+items[0];
-    };
-
-
 function showResults(){
     window.alert("The game has ended! You have scored "+playerScore+" points!");
     seeMain.style.visibility = "hidden";
     header.style.visibility = "hidden";
-    playerName = window.prompt("initials");
     addToStorage();
     setHighScore ();
     document.getElementById('replay').addEventListener("click",exitQuiz)
     };
 
 function exitQuiz() {
-    location.reload()
+        location.reload()
 };
 
 buildQuiz();
