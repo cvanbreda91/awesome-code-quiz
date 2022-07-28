@@ -164,3 +164,25 @@ section {
   width:700px;
   height: 700px;
 }
+
+.high-score {
+  font-size: 50px;
+  padding-left: 30px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-container button {
+  min-width: 150px;
+  max-width: 150px;
+  min-height: 100px;
+  max-height: 100px;
+  margin-top: 50px;
+}
+
+.high-score ol {
+  padding-left: 150px;
+}

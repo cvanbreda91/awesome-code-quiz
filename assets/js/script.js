@@ -24,8 +24,6 @@ function countdown() {
       }
     }, 1000);}
 
-
-
 var questionArray =[{
     "question": "hey there",
     "A": "OMG!",
@@ -103,6 +101,7 @@ function showResults(){
     playerName = window.prompt("initials");
     addToStorage();
     setHighScore ();
+    document.getElementById('replay').addEventListener("click",exitQuiz)
     };
 
 function exitQuiz() {
