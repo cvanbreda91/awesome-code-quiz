@@ -37,6 +37,6 @@ Made with ❤️ by Courtney
 - get items from localStorage
 
 ## Website Snapshot
-![website-image](https://github.com/cvanbreda91/Password-Generator/blob/main/assets/images/website-image.jpg?raw=true)
-![website-image](https://github.com/cvanbreda91/Password-Generator/blob/main/assets/images/website-image.jpg?raw=true)
-![website-image](https://github.com/cvanbreda91/Password-Generator/blob/main/assets/images/website-image.jpg?raw=true)
+![website-image](https://github.com/cvanbreda91/awesome-code-quiz/blob/main/assets/images/screen-1.png?raw=true)
+![website-image](https://github.com/cvanbreda91/awesome-code-quiz/blob/main/assets/images/screen-2.png?raw=true)
+![website-image](https://github.com/cvanbreda91/awesome-code-quiz/blob/main/assets/images/screen-3.png?raw=true)
